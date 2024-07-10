@@ -7,17 +7,29 @@ int main()
     int newArr[size];
 
     // Left shift one byte
-    for (int i = 0; i < size-1; i++)
+    // for (int i = 0; i < size-1; i++)
+    // {
+    //     newArr[i] = array[i + 1];
+    // }
+    // newArr[size - 1] = 0;
+
+    // N byte left shift
+    int k = 3;
+    for (int i = 0; i < size; i++)
     {
-        newArr[i] = array[i + 1];
-    }
-    newArr[size - 1] = 0;
+        if (i < size - k)
+        {
+            newArr[i] = array[i + k];
+        } else {
+            newArr[i] = 0;
+        }
+    };
 
     // Print the new array
     for (int i = 0; i < size; i++)
     {
         printf("%d, ", newArr[i]);
-    }
+    };
 
     return 0;
 }
